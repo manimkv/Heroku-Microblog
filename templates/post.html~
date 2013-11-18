@@ -1,0 +1,11 @@
+{% extends "layout1.html" %}
+{% block content %}
+
+<h2>Post Here</h2>
+    <form action="{{ url_for('add_post') }}" method=post>
+        <font color="red">Title:<font/><input type=text size=71 name=title>
+        <br/>
+        <textarea name=blogpost rows=20 cols=74></textarea>
+        <br/><input type=submit Style = "color:red" value=Post>
+    </form>
+{% endblock %}

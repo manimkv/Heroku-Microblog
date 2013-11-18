@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="kumbo">
+  <h2>TECH WIZARD<h2> 
+</div>
+<div align="right"><h4><a href='/contact'>Contact Me</a><h4></div>
+<body>
+    <div class="kumbo">
+    {% for post in posts %}
+    <form method="post" action="{{ url_for('add_comment') }}">
+      <p>Post No:<textarea name="postid" cols="1" rows="1">{{post.id}}</textarea></p>
+      <p><font size='2'>Date:{{post.day}} Time:{{post.time}}</font></p>
+      <div align="center">
+        <b><font size='20' face="Comic sans MS"><p>{{post.author}}</p></font></b>
+        <p><font size='4'>{{post.post}}</font></p><b>
+      </div>
+      <p><font size='2'>Date:{{post.day}} Time:{{post.time}}</font></p>
+      <p><font color="blue">Add your comments</font></p>
+      <p>Name<textarea name="guest" cols="20" rows="1"></textarea></p>
+      <p>Comment<textarea name="comments" cols="40" rows="1"></textarea></p>
+      <input type="submit" Style = "color:red" value="Comment" />
+    </form>	
+    <p><font color="blue">Previous Comments</font></p>
+      {{post.comment}}
+<p>_____________________________________________________________________________________________________________________________________________</p>
+    {% endfor %}
+</body>
+</div>
+{% endblock %}
